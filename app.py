@@ -12,15 +12,15 @@ st.set_page_config(page_title="Student Burnout Predictor", layout="wide")
 # Load models and preprocessing objects
 @st.cache_resource
 def load_assets():
-    with open('models/best_model.pkl', 'rb') as f:
+    with open('best_model.pkl', 'rb') as f:
         model = pickle.load(f)
-    with open('models/scaler.pkl', 'rb') as f:
+    with open('scaler.pkl', 'rb') as f:
         scaler = pickle.load(f)
-    with open('models/label_encoders.pkl', 'rb') as f:
+    with open('label_encoders.pkl', 'rb') as f:
         le_dict = pickle.load(f)
-    with open('models/target_encoder.pkl', 'rb') as f:
+    with open('target_encoder.pkl', 'rb') as f:
         le_target = pickle.load(f)
-    with open('models/results.pkl', 'rb') as f:
+    with open('results.pkl', 'rb') as f:
         results = pickle.load(f)
     return model, scaler, le_dict, le_target, results
 
